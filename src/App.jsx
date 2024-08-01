@@ -1,6 +1,14 @@
+import { useEffect } from 'react'
 import style from './App.module.css'
 
 const App = () => {
+  console.log('first')
+
+  useEffect(() => {
+    fetch('https://reqres.in/api/users')
+      .then(res => res.json())
+      .then(data => console.log(data))
+  }, [])
   return (
     <nav className={style.sidebar}>
       <div className={style.menuBar}>
